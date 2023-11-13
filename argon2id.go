@@ -176,6 +176,9 @@ func DecodeHash(hash string) (params *Params, salt, key []byte, err error) {
 	if err != nil {
 		return nil, nil, nil, err
 	}
+	if bytes.ContainsAny(rest, "\r\n") { // base64 decoder ignores these
+		return nil, nil, nil, ErrInvalidHash
+	}
 
 	var i int
 	if i = bytes.IndexByte(rest, '$'); i == -1 {
