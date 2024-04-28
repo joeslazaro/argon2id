@@ -4,6 +4,9 @@ This package provides a convenience wrapper around Go's [argon2](https://pkg.go.
 
 It enforces use of the Argon2id algorithm variant and cryptographically-secure random salts.
 
+This is a fork from the original repo at https://github.com/alexedwards/argon2id in order to
+apply pull requests other people that I wanted to include.
+
 ## Usage
 
 ```go
